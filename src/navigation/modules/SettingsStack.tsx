@@ -14,13 +14,18 @@ const LanguageSettingsScreen = lazyScreen(() => import('../../screens/LanguageSe
 const NotificationPreferencesScreen = lazyScreen(
   () => import('../../screens/NotificationPreferencesScreen')
 );
+const DeliveryStatusScreen = lazyScreen(() => import('../../screens/DeliveryStatusScreen'));
 const NotificationInboxScreen = lazyScreen(() => import('../../screens/NotificationInboxScreen'));
 const EmailTemplateEditorScreen = lazyScreen(
   () => import('../../screens/EmailTemplateEditorScreen')
 );
+const TemplateVersionHistoryScreen = lazyScreen(
+  () => import('../../screens/TemplateVersionHistoryScreen')
+);
 const GDPRSettingsScreen = lazyScreen(() => import('../../screens/GDPRSettingsScreen'));
 const PrivacyCenterScreen = lazyScreen(() => import('../../screens/PrivacyCenterScreen'));
 const ConsentManagementScreen = lazyScreen(() => import('../../screens/ConsentManagementScreen'));
+const SmsConsentScreen = lazyScreen(() => import('../../screens/SmsConsentScreen'));
 const DataExportScreen = lazyScreen(() => import('../../screens/DataExportScreen'));
 const TaxSettingsScreen = lazyScreen(() => import('../../screens/TaxSettingsScreen'));
 const TaxComplianceScreen = lazyScreen(() => import('../../screens/TaxComplianceScreen'));
@@ -46,6 +51,9 @@ export const SettingsStack = () => (
       options={{ title: 'Notification Preferences', headerShown: true }}
     />
     <Stack.Screen
+      name="DeliveryStatus"
+      component={DeliveryStatusScreen}
+      options={{ title: 'Delivery Status', headerShown: true }}
       name="NotificationInbox"
       component={NotificationInboxScreen}
       options={{ title: 'Notification Inbox', headerShown: true }}
@@ -54,6 +62,11 @@ export const SettingsStack = () => (
       name="EmailTemplateEditor"
       component={EmailTemplateEditorScreen}
       options={{ title: 'Email Template Editor', headerShown: true }}
+    />
+    <Stack.Screen
+      name="TemplateVersionHistory"
+      component={TemplateVersionHistoryScreen}
+      options={{ title: 'Template Versions', headerShown: true }}
     />
     <Stack.Screen
       name="GDPRSettings"
@@ -69,6 +82,11 @@ export const SettingsStack = () => (
       name="ConsentManagement"
       component={ConsentManagementScreen}
       options={{ title: 'Consent Preferences', headerShown: true }}
+    />
+    <Stack.Screen
+      name="SmsConsent"
+      component={SmsConsentScreen}
+      options={{ title: 'SMS Consent', headerShown: true }}
     />
     <Stack.Screen
       name="DataExport"
